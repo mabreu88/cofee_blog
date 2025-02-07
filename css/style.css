@@ -5,14 +5,18 @@
     --primaryColor: #784d3c;
     --white: #fff;
     --black: #000;
+    --border: #e1e1e1;
 }
 
 html {
     box-sizing: border-box;
-    font-size: 62.5%; /* 1rem = 10px */
+    font-size: 62.5%;
+    /* 1rem = 10px */
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
@@ -36,8 +40,12 @@ a {
     text-decoration: none;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: var(--mainFont);
+    line-height: 2;
 }
 
 h1 {
@@ -72,4 +80,133 @@ img {
 
 .text-center {
     text-align: center;
+}
+
+/*=== Header ===*/
+
+.header {
+    background-image: url(../img/banner.jpg);
+    height: 60rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.header__text {
+    color: var(--white);
+    text-align: center;
+    padding-top: 10rem;
+}
+
+@media (min-width: 768px) {
+    .logo__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 5rem;
+    }
+}
+
+.logo__text {
+    color: var(--white);
+    font-weight: 100;
+}
+
+.logo__bold {
+    color: var(--primaryColor);
+    font-weight: 800;
+}
+
+.nav__item {
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--white);
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+/*=== Main Content ===*/
+
+@media (min-width: 768px) {
+  .main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+  }  
+}
+
+.blog__content {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+
+}
+
+.blog__content:last-of-type {
+    border-bottom: none;
+    margin-bottom: none;
+}
+
+.button {
+    display: block;
+    font-family: var(--mainFont);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    border-radius: .5rem;
+}
+
+@media (min-width: 768px) {
+  .button {
+    display: inline-block;
+  }
+  
+}
+
+.blog--button {
+    background-color: var(--black);
+    margin-top: 2rem;
+
+}
+
+.workshop--button {
+    background-color: var(--primaryColor);
+}
+
+ul {
+    list-style: none;
+}
+
+.widget__workshop {
+    border-bottom: 1px solid var(--border);
+}
+
+.widget__workshop:last-of-type {
+    border-bottom: none;
+}
+
+.widget__workshop-label {
+    font-weight: bold;
+}
+
+.widget__workshop-info {
+    font-weight: normal;
+}
+
+/*=== Footer ===*/
+.footer {
+    text-align: center;
+    background-color: var(--black);
+    color: var(--white);
+    padding:  2rem;
+    margin-top: 4rem;
 }
